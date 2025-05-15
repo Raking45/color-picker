@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Picker & Scheme Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="main.js" defer></script>
+</head>
+<body class="background">
+  
+  <div class="container">
+    <!-- Header -->
+    <header class="header>">
+      <h1 class="title">Color Unity</h1>
+      <p class="subtitle">Explore, pick, and generate beautiful color schemes with comprehensive color code information for websites!</p>
+    </header>
+    <!-- Main -->
+    <main class="main-grid">
+      <!-- Color Picker -->
+      <section class="card">
+        <h2 class="card-title"><i class="fas fa-eye-dropper icon"></i>Color Picker</h2>
+        <label class="label">Select Base Color</label>
+        <input type="color" id="basecolor" value="#3b82f6" class="color-input" />
+
+        <label class="label">Hue <span id="hueValue">217&#176;</span></label>
+        <input type="range" id="hueRange" min="0" max="360" value="217" class="range" />
+
+        <label class="label">Saturation <span id="saturationValue">77&#37;</span></label>
+        <input type="range" id="saturationRange" min="0" max="100" value="77" class="range" />
+
+        <label class="label">Lightness <span id="lightnessValue">59&#37;</span></label>
+        <input type="range" id="lightnessRange" min="0" max="100" value="59" class="range" />
+      </section>
+      <!-- Color Info -->
+      <section class="card">
+        <h2 class="card-title"><i class="fas fa-info-circle icon"></i>Color Info</h2>
+        <div id="currentColor" class="color-display">Current Color</div>
+        <div class="color-info">
+          <div class="info-row"><span>HEX </span><span id="hexValue">&#9839;3b82f6</span><button class="copy-btn"><i class="far fa-copy"></i></button></div>
+          <div class="info-row"><span>RGB </span><span id="rgbValue">rgb(59,130,246)</span><button class="copy-btn"><i class="far fa-copy"></i></button></div>
+          <div class="info-row"><span>RGBA </span><span id="rgbaValue">rgba(59,130,246,1)</span><button class="copy-btn"><i class="far fa-copy"></i></button></div>
+          <div class="info-row"><span>HSL </span><span id="hslValue">hsl(217,91&#37;,60&#37;)</span><button class="copy-btn"><i class="far fa-copy"></i></button></div>
+          <div class="info-row"><span>HSLA </span><span id="hslaValue">hsla(217,91&#37;,60&#37;,1)</span><button class="copy-btn"><i class="far fa-copy"></i></button></div>
+        </div>
+      </section>
+      <!-- Color Scheme -->
+      <section class="card">
+        <h2 class="card-title"><i class="fas fa-palette icon"></i>Color Scheme</h2>
+        <label class="label">Scheme Type</label>
+        <select id="schemeType" class="select">
+          <option value="monochromatic">Monochromatic</option>
+          <option value="analogous">Analogous</option>
+          <option value="complementary">Complementary</option>
+          <option value="triadic">Triadic</option>
+          <option value="tetradic">Tetradic</option>
+        </select>
+        <div id="colorScheme" class="scheme-grid">
+          <div class="swatch" style="background:#3b82f6">&#9839;3b82f6</div>
+          <div class="swatch" style="background:#93c5fd">&#9839;93c5fd</div>
+          <div class="swatch" style="background:#1d4ed8">&#9839;1d4ed8</div>
+          <div class="swatch" style="background:#60a5fa">&#9839;60a5fa</div>
+          <div class="swatch" style="background:#2563eb">&#9839;2563eb</div>
+        </div>
+        <button id="generateScheme" class="btn"><i class="fas fa-sync-alt"></i>Generate</button>
+      </section>
+    </main>
+    
+    <!-- Saved Colors -->
+    <section class="card saved">
+      <h2 class="card-title"><i class="fas fa-bookmark icon"></i>Saved Colors</h2>
+      <div id="savedColors" class="saved-grid">
+        <div class="saved-item" style="background:#3b82f6">&#9839;3b82f6</div>
+        <div class="saved-item" style="background:#10b981">&#9839;10b981</div>
+        <div class="saved-item" style="background:#f59e0b">&#9839;f59e0b</div>
+        <div class="saved-item" style="background:#ef4444">&#9839;ef4444</div>
+        <div class="saved-item" style="background:#8b5cf6">&#9839;8b5cf6</div>
+        <div class="saved-item" style="background:#ec4899">&#9839;ec4899</div>
+      </div>
+      <div class="action-row">
+        <button id="saveColor" class="btn-alt"><i class="fas fa-plus"></i>Save</button>
+        <button id="clearSaved" class="btn-alt"><i class="fas fa-trash-alt"></i>Clear</button>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
